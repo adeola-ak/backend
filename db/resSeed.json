@@ -1,0 +1,45 @@
+[
+	{
+		"name": "In-n-out",
+		"zipcode": "91010",
+		"img": "https://cdn.vox-cdn.com/thumbor/XCefPfFtrJQR8q_Uf6XfxHYmZEA=/0x7:800x407/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/3721586/Screen_Shot_2015-05-20_at_11.29.12_AM.0.png"
+	},
+	{
+		"name": "Dog Haus",
+		"zipcode": "91135",
+		"img": "https://i.pinimg.com/originals/b5/d0/9c/b5d09c3121f9db2a53de7f920637c8ad.jpg"
+	},
+
+	{
+		"name": "STK",
+		"zipcode": "91135",
+		"img": "n/a"
+	},
+
+	{
+		"name": "TAO",
+		"zipcode": "10022",
+		"img": "n/a"
+	},
+
+	{
+		"name": "Ventana",
+		"zipcode": "07024",
+		"img": "https://s3-media0.fl.yelpcdn.com/bphoto/dfF_meN28igTmDqW1aWM2Q/o.jpg"
+	},
+	{
+		"name": "Palace Diner",
+		"zipcode": "04005",
+		"img": "https://multifiles.pressherald.com/uploads/sites/4/2014/06/459895_121739-20140625_DineOutME4.jpg"
+	},
+	{
+		"name": "Pieology",
+		"zipcode": "91016",
+		"img": "https://www.gannett-cdn.com/presto/2019/01/02/PPAS/4eab873a-c2ad-4ed0-821d-b88f9165ea68-Best_Pizza_-_Pieology.jpg?crop=1692,944,x35,y0&width=1692&height=944&format=pjpg&auto=webp"
+	},
+	{
+		"name": "Rose Foods",
+		"zipcode": "04101",
+		"img": "https://images.squarespace-cdn.com/content/v1/56b4d4652fe1314ae2567789/1523732926340-3D17NL0MG0RB7ZNIC6W5/ke17ZwdGBToddI8pDm48kP5ACdJ-lCfOYnJPG5IZcJh7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTm8CnKHo2wjeO4u63FO9raGFsdraD5n-XKcr1xy56MkXg70z8hxBxusHR3lsv2SqAx/rose+foods+exterior.jpg"
+	}
+]

@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Ringer",
+		"type": "Burger",
+		"img": "https://doghaus.com/images/menu/hausburgers/big/01.jpg"
+	},
+	{
+		"name": "Double Cheeseburger",
+		"type": "Burger",
+		"img": "https://www.gannett-cdn.com/media/USATODAY/USATODAY/2013/07/31/1375298418004-XXX-Great-American-Bites-In-N-Out-05-3299-1307311547_16_9.jpg"
+	},
+	{
+		"name": "Fire Grilled BBQ Chicken",
+		"type": "Pizza",
+		"img": "https://mk0pieologyc5tbrq0kb.kinstacdn.com/wp-content/uploads/2020/04/Pieology_Fire_Grilled_BBQ_Chicken_620x470.jpg"
+	},
+	{
+		"name": "Skirt Steak Frites",
+		"type": "Steak",
+		"img": "https://ventanasatthemodern.com/wp-content/uploads/2020/06/FC-5-320x320.jpg"
+	},
+	{
+		"name": "Smoked Salmon Sandwich",
+		"type": "Bagel",
+		"img": "https://d3rw5v15h1jwdg.cloudfront.net/wp-content/uploads/2017/11/29133829/DSC6946.jpg"
+	}
+]

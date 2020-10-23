@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Jesse1234",
+		"date": "10/23/2020",
+		"stars": 3,
+		"comment": "Probably my favorite burger, of all time"
+	},
+	{
+		"name": "JesMister72",
+		"data": "10/23/2020",
+		"stars": 3,
+		"comment": ""
+	},
+	{
+		"name": "Leah",
+		"date": "10/23/2020",
+		"stars": 3,
+		"comment": "Best pancakes in the world!! Highly recommend!"
+	},
+	{
+		"name": "RouseMaster789",
+		"date": "10/23/2020",
+		"stars": "2",
+		"comment": "It's good but not my thing"
+	},
+	{
+		"name": "Maya",
+		"date": "10/23/2020",
+		"stars": 3,
+		"comment": "Delicious bagels!"
+	}
+]
