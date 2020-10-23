@@ -122,7 +122,7 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
 - [Notion Page](https://www.notion.so/6abe7434a98a457da840a400284fb91a?v=21050a9ead9c43e2aed069234b64714e)
     - Wireframes
     - React Architecture 
-    - Planning 
+    
 
 ## Additional Libraries
 
