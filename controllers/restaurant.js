@@ -9,19 +9,19 @@ const Item = require("../models/item");
 //get all restaurants and seed
 router.get("/seed", async (req, res) => {
 	await Restaurant.deleteMany({});
-	const restuarants = await Restaurant.insertMany(seedData);
+	const restaurants = await Restaurant.insertMany(seedData);
 	res.json({
 		status: 200,
-		restuarants: restuarants,
+		restaurants: restaurants,
 	});
 });
 
 //get all restaurants
 router.get("/", async (req, res) => {
-	const restuarants = await Restaurant.find({}).populate("items");
+	const restaurants = await Restaurant.find({}).populate("items");
 	res.json({
 		status: 200,
-		restuarants: restuarants,
+		restaurants: restaurants,
 	});
 });
 
@@ -43,7 +43,7 @@ router.put("/:restaurantId/addItem/:itemId", async (req, res) => {
 					else
 						res.json({
 							status: 200,
-							restuarants: restaurant,
+							restaurants: restaurant,
 						});
 				}
 			);
@@ -53,10 +53,10 @@ router.put("/:restaurantId/addItem/:itemId", async (req, res) => {
 
 //get specific restaurant by id
 router.get("/:id", async (req, res) => {
-	const restuarant = await Restaurant.findById(req.params.id);
+	const restaurant = await Restaurant.findById(req.params.id);
 	res.json({
 		status: 200,
-		restuarants: restuarant,
+		restaurants: restaurant,
 	});
 });
 
