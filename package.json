@@ -7,17 +7,9 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node server.js"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/adeola-ak/frontend.git"
-	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/adeola-ak/frontend/issues"
-	},
-	"homepage": "https://github.com/adeola-ak/frontend#readme",
 	"dependencies": {
 		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
