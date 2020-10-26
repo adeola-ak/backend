@@ -9,7 +9,7 @@ const itemRouter = require("./controllers/item");
 const ratingRouter = require("./controllers/rating");
 
 app.get("/", (req, res) => {
-	res.send("well hello there world..");
+	res.send("well, hello there world..");
 });
 
 app.use(cors());
