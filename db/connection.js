@@ -1,6 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
-const mongoURI = process.env.mongoURI;
+const mongoURI = "mongodb://localhost:27017/palate";
 
 const config = {
 	useUnifiedTopology: true,
