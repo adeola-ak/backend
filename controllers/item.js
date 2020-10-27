@@ -36,7 +36,11 @@ router.get("/:id", async (req, res) => {
 
 //post an item
 router.post("/", async (req, res) => {
-	const item = await Item.create(req.body);
+	const item = await Item.create(req.body.newItem);
+	const restaurant = await Restaurant.findById(req.body.restId)
+	restaurant.items.push(item)
+	restaurant.save()
+	
 	res.json({
 		status: 200,
 		items: item,
