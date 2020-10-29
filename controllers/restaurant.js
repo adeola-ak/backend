@@ -53,7 +53,7 @@ router.put("/:restaurantId/addItem/:itemId", async (req, res) => {
 
 //get specific restaurant by id
 router.get("/:id", async (req, res) => {
-	const restaurant = await Restaurant.findById(req.params.id);
+	const restaurant = await Restaurant.findById(req.params.id).populate("items")
 	res.json({
 		status: 200,
 		restaurants: restaurant,
