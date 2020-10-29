@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 
 //get specific item by id
 router.get("/:id", async (req, res) => {
-	const item = await Item.findById(req.params.id);
+	const item = await (await Item.findById(req.params.id)).populated('ratings');
 	res.json({
 		status: 200,
 		items: item,
