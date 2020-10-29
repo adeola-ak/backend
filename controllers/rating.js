@@ -37,7 +37,7 @@ router.get("/:id", async (req, res) => {
 //post an rating
 router.post("/", async (req, res) => {
 	const rating = await Rating.create(req.body.newRating);
-	const item = await Item.findById(reg.body.restId)
+	const item = await Item.findById(req.body.restId)
 	item.ratings.push(rating)
 	item.save()
 	res.json({
