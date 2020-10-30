@@ -1,6 +1,6 @@
-# Project Overview
+# Project Overview 
 
-Team: Adeola, Jesse and Leah
+Unit 3 Project Team: Adeola, Jesse and Leah
 
 ## Project Schedule
 
@@ -10,7 +10,7 @@ Team: Adeola, Jesse and Leah
 |Day 2 - Tuesday| Begin Building Application Structure - focus on Frontend. Deploy front end on Netlify | Complete
 |Day 3 - Wednesday| Frontend and styling  | Complete
 |Day 4 - Thursday| Frontend, styling, testing | Complete
-|Day 5 - Friday| Final Touches, Update Project Worksheet & Presentation | -
+|Day 5 - Friday| Final Touches, Update Project Worksheet & Presentation | Complete
 
 
 ## Project Links
@@ -112,7 +112,7 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
 
 ### PostMVP Timeline
 | Component | Priority | Estimated Time | Actual Time | 
-| --- | :---: |  :---: | :---: | :---: | 
+| --- | :---: |  :---: | :---: | 
 | Additional styling and animation | M | 4hr | - | 
 | Additional React Component "Recently Reviewed" | M | 6hr | - |  
 | Work with Yelp API to search for restaurants | M | 8hr | - |  
@@ -125,13 +125,25 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
     - React Architecture
     
 ## Additional Libraries
-Font Awesome
+- [Font Awesome](https://fontawesome.com/)
 
 ## Code Snippet
+We researched nested routes and used the props.match.url to create Routes in child components. In App, we removed the 'exact path' from the ItemList Route (top level Route), in order to utilize these routes in child components. 
 
+```
+	<Route
+		exact path={props.match.url + "/edit"}
+		render={(routerprops) => (
+		<ItemForm
+			{...routerprops}
+			handleSubmit={handleUpdate}
+			item={selectedItem}
+			id={props.match.params.id}
+		/>
+		)}
+    />
 
-
-## Challenges 
+```
 
 
 ## Future Direction & Ideas
@@ -139,7 +151,3 @@ Font Awesome
     - Styling UI, animation, interacitivity for UX
     - Additional React Component that would display restaurants that have been recently Reviewed
     - Incorporate 3rd party API from Yelp. [Yelp API](https://www.yelp.com/developers/documentation/v3)
-
-
-
-## Takeaways
