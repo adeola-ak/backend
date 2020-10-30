@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ratingSchema = new Schema({
 	name: { type: String, required: true },
 	date: Date,
-	stars: { type: Number, required: true }, //do we need to specify a range here?
+	stars: { type: Number, required: true },
 	comment: { type: String },
 });
 
