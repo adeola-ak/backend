@@ -91,23 +91,23 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
 
 | Component | Priority | Estimated Time | Actual Time | Status |
 | --- | :---: |  :---: | :---: | :---: |
-| Meetings | H | 4hrs| - | Complete |
-| Backend: Setup - Repo, file structure | H | 2hrs|  | Complete |
-| Backend: Building Structure | H | 5hrs|  | Complete |
-| Backend: Testing data | H | 4hrs|  | Complete |
-| Backend: Testing CRUD Functionality | H | 5hrs|  | Complete |
-| Backend: Deployment | H | 2hr | | Complete |
-| Frontend: Create React App | H | 1hr|  | Complete |
-| Frontend: Setup Components Structure | H | 2hr| | Complete |
-| Frontend: Build Components | H | 10hrs|  | Complete |
-| Frontend: Testing Searchbar | L | 5hrs|  | Complete |
-| Frontend: Testing CRUD Functionality | H | 10hrs|  | Complete |
-| Frontend: Deployment| H | 2hrs|  | Complete |
-| Styling: Mobile | M | 5hrs|  | Complete |
-| Styling: Tablet/Desktop | M | 5hrs|  | Complete  |
-| Research | M | 5hr|  | Complete |
-| Testing / Troubleshooting | H | 5hrs|  | Complete |
-| Total |  | 72hrs|  | |
+| Meetings | H | 4hrs| 4hrs | Complete |
+| Backend: Setup - Repo, file structure | H | 2hrs| 1hr | Complete |
+| Backend: Building Structure | H | 5hrs| 3hrs | Complete |
+| Backend: Testing data | H | 4hrs| 2hrs | Complete |
+| Backend: Testing CRUD Functionality | H | 5hrs| 2.5hrs | Complete |
+| Backend: Deployment | H | 2hr | 1hr | Complete |
+| Frontend: Create React App | H | 1hr| 1hr | Complete |
+| Frontend: Setup Components Structure | H | 2hr| 1hr | Complete |
+| Frontend: Build Components | H | 10hrs| 10hrs | Complete |
+| Frontend: Testing Searchbar | L | 5hrs| 1hr | Complete |
+| Frontend: Testing CRUD Functionality | H | 10hrs| 10hrs | Complete |
+| Frontend: Deployment| H | 2hrs| 1hr | Complete |
+| Styling: Mobile | M | 5hrs| 5hrs | Complete |
+| Styling: Tablet/Desktop | M | 5hrs| 5hrs | Complete  |
+| Research | M | 5hr| 5hrs | Complete |
+| Testing / Troubleshooting | H | 5hrs| 6hrs | Complete |
+| Total |  | 72hrs| 58.5hrs | |
 
 
 ### PostMVP Timeline
