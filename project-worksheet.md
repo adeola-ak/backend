@@ -22,7 +22,7 @@ Team: Adeola, Jesse and Leah
 
 ## Project Description
 
-Build an app similar to Yelp that allows users to add, rate and comment on menu items at a restaurant. We discussed that so often the reviews on yelp are about the user’s overall experience at the restaurant and you have to read a lot of reviews before you find suggestions for menu items they suggested. The concept is to highlight item reviews for users and would place highlt rated items at the forefront.
+Build an app similar to Yelp that allows users to add, rate and comment on menu items at a restaurant. We discussed that so often the reviews on Yelp are about the user’s overall experience at the restaurant and you have to read a lot of reviews before you find suggestions for menu items. The concept is to highlight item reviews for users to find easily and would place highly rated items at the forefront.
 
 ## Components
 
@@ -50,7 +50,7 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
         - App 
             - Nav
             - Team
-            - Resturant Search
+            - Search
             - Restaurant
             - ItemList
                 - ItemForm
