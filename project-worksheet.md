@@ -1,6 +1,6 @@
-# Project Overview
+# Project Overview 
 
-Team: Adeola, Jesse and Leah
+Unit 3 Project Team: Adeola, Jesse and Leah
 
 ## Project Schedule
 
@@ -10,7 +10,7 @@ Team: Adeola, Jesse and Leah
 |Day 2 - Tuesday| Begin Building Application Structure - focus on Frontend. Deploy front end on Netlify | Complete
 |Day 3 - Wednesday| Frontend and styling  | Complete
 |Day 4 - Thursday| Frontend, styling, testing | Complete
-|Day 5 - Friday| Final Touches, Update Project Worksheet & Presentation | -
+|Day 5 - Friday| Final Touches, Update Project Worksheet & Presentation | Complete
 
 
 ## Project Links
@@ -91,28 +91,28 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
 
 | Component | Priority | Estimated Time | Actual Time | Status |
 | --- | :---: |  :---: | :---: | :---: |
-| Meetings | H | 4hrs| - | Complete |
-| Backend: Setup - Repo, file structure | H | 2hrs|  | Complete |
-| Backend: Building Structure | H | 5hrs|  | Complete |
-| Backend: Testing data | H | 4hrs|  | Complete |
-| Backend: Testing CRUD Functionality | H | 5hrs|  | Complete |
-| Backend: Deployment | H | 2hr | | Complete |
-| Frontend: Create React App | H | 1hr|  | Complete |
-| Frontend: Setup Components Structure | H | 2hr| | Complete |
-| Frontend: Build Components | H | 10hrs|  | Complete |
-| Frontend: Testing Searchbar | L | 5hrs|  | Complete |
-| Frontend: Testing CRUD Functionality | H | 10hrs|  | Complete |
-| Frontend: Deployment| H | 2hrs|  | Complete |
-| Styling: Mobile | M | 5hrs|  | Complete |
-| Styling: Tablet/Desktop | M | 5hrs|  | Complete  |
-| Research | M | 5hr|  | Complete |
-| Testing / Troubleshooting | H | 5hrs|  | Complete |
-| Total |  | 72hrs|  | |
+| Meetings | H | 4hrs| 4hrs | Complete |
+| Backend: Setup - Repo, file structure | H | 2hrs| 1hr | Complete |
+| Backend: Building Structure | H | 5hrs| 3hrs | Complete |
+| Backend: Testing data | H | 4hrs| 2hrs | Complete |
+| Backend: Testing CRUD Functionality | H | 5hrs| 2.5hrs | Complete |
+| Backend: Deployment | H | 2hr | 1hr | Complete |
+| Frontend: Create React App | H | 1hr| 1hr | Complete |
+| Frontend: Setup Components Structure | H | 2hr| 1hr | Complete |
+| Frontend: Build Components | H | 10hrs| 10hrs | Complete |
+| Frontend: Testing Searchbar | L | 5hrs| 1hr | Complete |
+| Frontend: Testing CRUD Functionality | H | 10hrs| 10hrs | Complete |
+| Frontend: Deployment| H | 2hrs| 1hr | Complete |
+| Styling: Mobile | M | 5hrs| 5hrs | Complete |
+| Styling: Tablet/Desktop | M | 5hrs| 5hrs | Complete  |
+| Research | M | 5hr| 5hrs | Complete |
+| Testing / Troubleshooting | H | 5hrs| 6hrs | Complete |
+| Total |  | 72hrs| 58.5hrs | |
 
 
 ### PostMVP Timeline
 | Component | Priority | Estimated Time | Actual Time | 
-| --- | :---: |  :---: | :---: | :---: | 
+| --- | :---: |  :---: | :---: | 
 | Additional styling and animation | M | 4hr | - | 
 | Additional React Component "Recently Reviewed" | M | 6hr | - |  
 | Work with Yelp API to search for restaurants | M | 8hr | - |  
@@ -125,13 +125,25 @@ Build an app similar to Yelp that allows users to add, rate and comment on menu 
     - React Architecture
     
 ## Additional Libraries
-Font Awesome
+- [Font Awesome](https://fontawesome.com/)
 
 ## Code Snippet
+We researched nested routes and used the props.match.url to create Routes in child components. In App, we removed the 'exact path' from the ItemList Route (top level Route), in order to utilize these routes in child components. 
 
+```
+	<Route
+		exact path={props.match.url + "/edit"}
+		render={(routerprops) => (
+		<ItemForm
+			{...routerprops}
+			handleSubmit={handleUpdate}
+			item={selectedItem}
+			id={props.match.params.id}
+		/>
+		)}
+    />
 
-
-## Challenges 
+```
 
 
 ## Future Direction & Ideas
@@ -139,7 +151,3 @@ Font Awesome
     - Styling UI, animation, interacitivity for UX
     - Additional React Component that would display restaurants that have been recently Reviewed
     - Incorporate 3rd party API from Yelp. [Yelp API](https://www.yelp.com/developers/documentation/v3)
-
-
-
-## Takeaways
