@@ -25,6 +25,14 @@ router.get("/", async (req, res) => {
 	});
 });
 
+router.put("/:id", async (req, res) => {
+	const restaurants = await Restaurant.findByIdAndUpdate("restaurants");
+	res.json({
+		status: 200,
+		restaurants: restaurants,
+	});
+});
+
 // get restaurants and associated items
 router.put("/:restaurantId/addItem/:itemId", async (req, res) => {
 	const item = await Item.findById(req.params.itemId, (err, item) => {
@@ -53,7 +61,9 @@ router.put("/:restaurantId/addItem/:itemId", async (req, res) => {
 
 //get specific restaurant by id
 router.get("/:id", async (req, res) => {
-	const restaurant = await Restaurant.findById(req.params.id).populate("items")
+	const restaurant = await Restaurant.findById(req.params.id).populate(
+		"items"
+	);
 	res.json({
 		status: 200,
 		restaurants: restaurant,
