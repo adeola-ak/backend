@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
 	});
 });
 
+//edit a restaurant
 router.put("/:id", async (req, res) => {
 	const restaurants = await Restaurant.findByIdAndUpdate("restaurants");
 	res.json({
