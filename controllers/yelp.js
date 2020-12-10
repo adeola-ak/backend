@@ -3,9 +3,11 @@ const router = Router();
 const API_KEY = process.env.apikey;
 const axios = require("axios");
 
-router.get("/data", async (req, res, next) => {
+router.post("/data", async (req, res) => {
+	const rest = req.body.restaurant;
+	const zip = req.body.zipcode;
 	await axios({
-		url: `https://api.yelp.com/v3/businesses/search?location=NewYork&term=restaurants`,
+		url: `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`,
 		method: "GET",
 		headers: {
 			Authorization: `Bearer ${API_KEY}`,
