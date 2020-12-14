@@ -37,10 +37,14 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	const foundRest = await Restaurant.find({["name"]:[req.params.rest], ["zipcode"]:[req.params.zip]});
 	  console.log("looking at the foundRest variable", foundRest)
 	//checking if restaurant was found
-  	if (foundRest) {
+  	if (foundRest[0]) {
 	//if found send back restaurant as json
 		console.log("in the if statement")
-    	res.json(foundRest);
+		res.json({
+		status: 200,
+		restaurantsFound: foundRest,
+	})
+    
   	} else {
 	//if not found search yelp api for restaurant and create new one in database
 	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`
