@@ -42,9 +42,8 @@ router.get('/data/:zip/:rest', async (req, res) => {
 		console.log("in the if statement")
 		res.json({
 		status: 200,
-		restaurantsFound: foundRest,
+		restaurantsFoundInDb: foundRest,
 	})
-    
   	} else {
 	//if not found search yelp api for restaurant and create new one in database
 	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`
@@ -74,9 +73,13 @@ router.get('/data/:zip/:rest', async (req, res) => {
 
 	}
 	// add restaurant into database
-    const created = await Restaurant.insertMany(newRestaurants);
-	res.json(created);
-	console.log(created)
+	const restCreated = await Restaurant.insertMany(newRestaurants);
+	res.json({
+		status: 200,
+		restaurantsAddedToDb: restCreated,
+	})
+	// res.json(created);
+	// console.log(created)
 }
 })
 
