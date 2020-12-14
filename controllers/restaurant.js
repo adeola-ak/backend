@@ -50,13 +50,27 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	}
 	})
 	const json = await fetch_response.json()
-	const newRest = { 
-	  	name: json.businesses[0].name,
-		zipcode: json.businesses[0].location.zip_code,
-    	img: json.businesses[0].image_url,
-    }
+	// const newRest = { 
+	//   	name: json.businesses[0].name,
+	// 	zipcode: json.businesses[0].location.zip_code,
+    // 	img: json.businesses[0].image_url,
+	// }
+	console.log(json)
+	
+	let newRestaurants = []
+	const data = json.businesses
+	for (let i = 0; i < data.length; i += 1) {
+		newRestaurants.push({...data,
+			name: data[i].name,
+			zipcode: data[i].location.zip_code,
+			street: data[i].location.street,
+			img: data[i].image_url,
+		})
+		console.log(newRestaurants)
+
+	}
 	// add restaurant into database
-    const created = await Restaurant.create(newRest);
+    const created = await Restaurant.insertMany(newRestaurants);
 	res.json(created);
 	console.log(created)
 }
