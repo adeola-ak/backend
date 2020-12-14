@@ -54,12 +54,14 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	}
 	})
 	const json = await fetch_response.json()
-	// const newRest = { 
-	//   	name: json.businesses[0].name,
-	// 	zipcode: json.businesses[0].location.zip_code,
-    // 	img: json.businesses[0].image_url,
-	// }
-	// console.log(json)
+
+	// for receieving only 1 restaurant
+		// const newRest = { 
+		//   	name: json.businesses[0].name,
+		// 	zipcode: json.businesses[0].location.zip_code,
+		// 	img: json.businesses[0].image_url,
+		// }
+		// console.log(json)
 	
 	let newRestaurants = []
 	const data = json.businesses
@@ -70,17 +72,29 @@ router.get('/data/:zip/:rest', async (req, res) => {
 			img: data[i].image_url,
 		})
 		// console.log(newRestaurants)
-
 	}
-	// add restaurant into database
-	const restCreated = await Restaurant.insertMany(newRestaurants);
-	res.json({
-		status: 200,
-		restaurantsAddedToDb: restCreated,
-	})
-	// res.json(created);
-	// console.log(created)
-}
+
+	// ** testing out how we can check the data recieved from the yelp api to see if the restaurants already exisit in db
+	// not currently working 
+	let verifiedNewRestaurants = []
+	for (let i = 0; i < newRestaurants.length; i += 1) { 
+
+		if (await Restaurant.find({["name"]:[newRestaurants[i]["name"]], ["zipcode"]:[newRestaurants[i]["zipcode"]]})) {
+				
+		} else {
+			verifiedNewRestaurants.push(newRestaurants[i])
+		}
+	}
+	//   console.log("the actual new restaurants", verifiedNewRestaurants)
+
+			// add restaurant into database
+			const restCreated = await Restaurant.insertMany(verifiedNewRestaurants);
+			res.json({
+				status: 200,
+				restaurantsAddedToDb: restCreated,
+			})
+		
+	}		
 })
 
 //edit a restaurant
