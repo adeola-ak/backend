@@ -34,11 +34,12 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	const rest = req.params.rest
 
 	 //Searching to see if restaurant is already in database
-	const foundRest = await Restaurant.find({name: req.params.rest, zipcode: req.params.zip});
-	  
+	const foundRest = await Restaurant.find({["name"]:[req.params.rest], ["zipcode"]:[req.params.zip]});
+	  console.log("looking at the foundRest variable", foundRest)
 	//checking if restaurant was found
-  	if (foundRest[0]) {
-    //if found send back restaurant as json
+  	if (foundRest) {
+	//if found send back restaurant as json
+		console.log("in the if statement")
     	res.json(foundRest);
   	} else {
 	//if not found search yelp api for restaurant and create new one in database
@@ -55,7 +56,7 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	// 	zipcode: json.businesses[0].location.zip_code,
     // 	img: json.businesses[0].image_url,
 	// }
-	console.log(json)
+	// console.log(json)
 	
 	let newRestaurants = []
 	const data = json.businesses
@@ -65,7 +66,7 @@ router.get('/data/:zip/:rest', async (req, res) => {
 			zipcode: data[i].location.zip_code,
 			img: data[i].image_url,
 		})
-		console.log(newRestaurants)
+		// console.log(newRestaurants)
 
 	}
 	// add restaurant into database
