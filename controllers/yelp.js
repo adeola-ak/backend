@@ -9,19 +9,22 @@ const fetch = require('node-fetch');
 // route parameters to endpoint "/data/:zip/:rest"
 	// const zip = req.params.zip
 	//const rest = req.params.rest
-router.get('/data/:zip/:rest', async (req, res) => {
-	const zip = req.params.zip
-	const rest = req.params.rest
-	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`
-	const fetch_response = await fetch(api_url, {
-		method: "GET",
-		headers: {
-		Authorization: `Bearer ${API_KEY}`,
-	}
-	})
-	const json = await fetch_response.json()
-	res.json(json)
-})
+// router.get('/data/:zip/:rest', async (req, res) => {
+// 	const zip = req.params.zip
+// 	const rest = req.params.rest
+// 	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`
+// 	const fetch_response = await fetch(api_url, {
+// 		method: "GET",
+// 		headers: {
+// 		Authorization: `Bearer ${API_KEY}`,
+// 	}
+// 	})
+// 	const json = await fetch_response.json()
+// 	res.json(json)
+// })
+
+
+
 
 
 
