@@ -63,7 +63,6 @@ router.get('/data/:zip/:rest', async (req, res) => {
 		newRestaurants.push({...data,
 			name: data[i].name,
 			zipcode: data[i].location.zip_code,
-			street: data[i].location.street,
 			img: data[i].image_url,
 		})
 		console.log(newRestaurants)
