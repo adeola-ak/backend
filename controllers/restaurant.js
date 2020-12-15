@@ -33,10 +33,10 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	const zip = req.params.zip
 	const rest = req.params.rest
 
-	 //Searching to see if restaurant is already in database
+	// Searching to see if restaurant is already in database
 	const foundRest = await Restaurant.find({["name"]:[req.params.rest], ["zipcode"]:[req.params.zip]});
 	  console.log("looking at the foundRest variable", foundRest)
-	//checking if restaurant was found
+	// checking if restaurant was found
   	if (foundRest[0]) {
 	//if found send back restaurant as json
 		console.log("in the if statement")
@@ -45,8 +45,8 @@ router.get('/data/:zip/:rest', async (req, res) => {
 		restaurantsFoundInDb: foundRest,
 	})
   	} else {
-	//if not found search yelp api for restaurant and create new one in database
-	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}`
+	// if not found search yelp api for restaurant and create new one in database
+	const api_url = `https://api.yelp.com/v3/businesses/search?location=${zip}&term=${rest}&limit=10`
 	const fetch_response = await fetch(api_url, {
 		method: "GET",
 		headers: {
@@ -54,14 +54,6 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	}
 	})
 	const json = await fetch_response.json()
-
-	// for receieving only 1 restaurant
-		// const newRest = { 
-		//   	name: json.businesses[0].name,
-		// 	zipcode: json.businesses[0].location.zip_code,
-		// 	img: json.businesses[0].image_url,
-		// }
-		// console.log(json)
 	
 	let newRestaurants = []
 	const data = json.businesses
@@ -74,25 +66,27 @@ router.get('/data/:zip/:rest', async (req, res) => {
 		// console.log(newRestaurants)
 	}
 
-	// ** testing out how we can check the data recieved from the yelp api to see if the restaurants already exisit in db
-	// not currently working 
+	//Checking the data recieved from the yelp api to see if the restaurants already exisit in db
 	let verifiedNewRestaurants = []
 	for (let i = 0; i < newRestaurants.length; i += 1) { 
+		const restaurantTest = await Restaurant.find({["name"]: newRestaurants[i]["name"], ["zipcode"]: newRestaurants[i]["zipcode"]}) 
+		// console.log({["name"]: newRestaurants[i]["name"], ["zipcode"]: newRestaurants[i]["zipcode"]})
+		// console.log(restaurantTest)
 
-		if (await Restaurant.find({["name"]:[newRestaurants[i]["name"]], ["zipcode"]:[newRestaurants[i]["zipcode"]]})) {
-				
+		if (newRestaurants[i] === restaurantTest) {
+			console.log(restaurantTest)
 		} else {
 			verifiedNewRestaurants.push(newRestaurants[i])
 		}
 	}
 	//   console.log("the actual new restaurants", verifiedNewRestaurants)
 
-			// add restaurant into database
-			const restCreated = await Restaurant.insertMany(verifiedNewRestaurants);
-			res.json({
-				status: 200,
-				restaurantsAddedToDb: restCreated,
-			})
+	// add restaurant into database
+	const restCreated = await Restaurant.insertMany(verifiedNewRestaurants);
+		res.json({
+			status: 200,
+			restaurantsAddedToDb: restCreated,
+		})
 		
 	}		
 })
