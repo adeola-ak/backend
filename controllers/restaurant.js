@@ -12,9 +12,10 @@ const fetch = require('node-fetch');
 //get all restaurants and seed
 router.get("/seed", async (req, res) => {
 	await Restaurant.deleteMany({});
-	const restaurants = await Restaurant.insertMany(seedData);
+	// const restaurants = await Restaurant.insertMany(seedData);
 	res.json({
 		status: 200,
+		msg: "db cleared",
 		restaurants: restaurants,
 	});
 });
@@ -42,7 +43,7 @@ router.get('/data/:zip/:rest', async (req, res) => {
 		console.log("in the if statement")
 		res.json({
 		status: 200,
-		restaurantsFoundInDb: foundRest,
+		restaurants: foundRest,
 	})
   	} else {
 	// if not found search yelp api for restaurant and create new one in database
@@ -60,18 +61,18 @@ router.get('/data/:zip/:rest', async (req, res) => {
 	for (let i = 0; i < data.length; i += 1) {
 		newRestaurants.push({...data,
 			name: data[i].name,
+			address: data[i].location.display_address,
 			zipcode: data[i].location.zip_code,
+			phone: data[i].display_phone,
 			img: data[i].image_url,
 		})
-		// console.log(newRestaurants)
 	}
 
 	//Checking the data recieved from the yelp api to see if the restaurants already exisit in db
 	let verifiedNewRestaurants = []
 	for (let i = 0; i < newRestaurants.length; i += 1) { 
 		const restaurantTest = await Restaurant.find({["name"]: newRestaurants[i]["name"], ["zipcode"]: newRestaurants[i]["zipcode"]}) 
-		// console.log({["name"]: newRestaurants[i]["name"], ["zipcode"]: newRestaurants[i]["zipcode"]})
-		// console.log(restaurantTest)
+
 
 		if (newRestaurants[i] === restaurantTest) {
 			console.log(restaurantTest)
@@ -79,13 +80,12 @@ router.get('/data/:zip/:rest', async (req, res) => {
 			verifiedNewRestaurants.push(newRestaurants[i])
 		}
 	}
-	//   console.log("the actual new restaurants", verifiedNewRestaurants)
 
 	// add restaurant into database
 	const restCreated = await Restaurant.insertMany(verifiedNewRestaurants);
 		res.json({
 			status: 200,
-			restaurantsAddedToDb: restCreated,
+			restaurants: restCreated,
 		})
 		
 	}		
